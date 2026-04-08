@@ -137,7 +137,7 @@ export default function Projects() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 mt-32">
-        <div className="bg-black rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+        <div className="bg-black rounded-3xl p-12 md:p-10 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
              <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
              <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />

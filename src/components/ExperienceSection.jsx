@@ -5,7 +5,7 @@ import { EXPERIENCE } from '../constants/portfolio';
 
 export default function ExperienceSection() {
   return (
-    <section className="bg-surface-container-low py-24 md:py-32">
+    <section className="bg-surface-container-low py-24 md:py-15">
       <div className="max-w-7xl mx-auto px-8">
         <div className="mb-16">
           <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">Career Path</span>

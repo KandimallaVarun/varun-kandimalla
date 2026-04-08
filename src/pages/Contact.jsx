@@ -3,7 +3,7 @@ import { Mail, Share2, Link as LinkIcon, Terminal, BarChart3 } from 'lucide-reac
 
 export default function Contact() {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-24 md:py-32 min-h-[calc(100vh-80px)] flex items-center">
+    <section className="max-w-7xl mx-auto px-8 py-24 md:py-20 min-h-[calc(100vh-80px)] flex items-center">
       <div className="grid md:grid-cols-2 gap-20 w-full">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
