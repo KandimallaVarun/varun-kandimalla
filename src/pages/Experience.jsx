@@ -26,22 +26,22 @@ export default function Experience() {
     <div className="min-h-screen bg-[#F8F9FA] pt-10 pb-20">
       {/* Header */}
       <section className="container mx-auto px-8 mb-10">
-        <Link 
+        {/* <Link 
           to="/" 
           className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-black transition-colors mb-8 group"
         >
           <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
           Back to Home
-        </Link>
+        </Link> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8">
+          <h3 className="text-5xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8">
             Professional Experience
-          </h1>
+          </h3>
         </motion.div>
       </section>
 

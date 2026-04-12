@@ -26,13 +26,13 @@ export default function Projects() {
     <div className="min-h-screen bg-white pt-10 pb-20">
       {/* Header */}
       <section className="container mx-auto px-6 mb-5">
-        <Link 
+        {/* <Link 
           to="/" 
           className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-black transition-colors mb-8 group"
         >
           <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
           Back to Home
-        </Link>
+        </Link> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import About from "./About";
 import ProjectSection from "../components/ProjectSection";
 import ExperienceSection from "../components/ExperienceSection";
+import CertificationsSection from "../components/CertificationsSection";
 import Contact from "./Contact";
 
 export default function Home() {
@@ -33,7 +34,7 @@ export default function Home() {
             </div>
             <p className="text-lg text-on-surface-variant leading-relaxed max-w-xl">
               I build scalable, high-performance applications with clean
-              architecture and user-friendly interfaces, and I’m passionate
+              architecture and user-friendly interfaces, and I'm passionate
               about writing efficient code and growing as a software
               engineer.{" "}
             </p>
@@ -77,16 +78,21 @@ export default function Home() {
       </section>
 
       {/* Other Sections */}
-      <div id="about">
-        <About />
+
+      <div id="experience">
+        <ExperienceSection />
       </div>
 
       <div id="projects">
         <ProjectSection />
       </div>
 
-      <div id="experience">
-        <ExperienceSection />
+      <div id="certifications">
+        <CertificationsSection />
+      </div>
+
+      <div id="about">
+        <About />
       </div>
 
       <div id="contact">
