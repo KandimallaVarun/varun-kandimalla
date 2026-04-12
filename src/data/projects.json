@@ -2,7 +2,7 @@
   {
     "title": "TreasureMart",
     "description": "E-commerce platform for shopping local artisan goods with integrated payment gateway and real-time inventory management.",
-    "image": "../src/images/TreasureMart.png",
+    "image": "/images/TreasureMart.png",
     "tags": ["Java", "Servlets", "JSP", "MySQL", "React", "AWS"],
     "category": "Full Stack",
     "github": "https://github.com/KandimallaVarun/TreasureMart-EcommerceApplication",
@@ -11,7 +11,7 @@
   {
     "title": "Library Management System",
     "description": "Comprehensive library management system with user authentication, book cataloging, and borrowing features, built with Java Servlets and React.",
-    "image": "../src/images/LibraryManagementSystem.png",
+    "image": "/images/LibraryManagementSystem.png",
     "tags": ["Java", "Servlets", "JSP", "MySQL", "React"],
     "category": "Full Stack",
     "github": "https://github.com/KandimallaVarun/LibraryManagementSystem",
@@ -20,7 +20,7 @@
   {
     "title": "Diabetes Prediction",
     "description": "AI-powered diabetes prediction app using machine learning for early detection.",
-    "image": "../src/images/DiabetesPrediction.png",
+    "image": "/images/DiabetesPrediction.png",
     "tags": ["Python", "SVM", "Scikit-learn", "Streamlit"],
     "category": "Machine Learning",
     "github": "https://github.com/KandimallaVarun/Diabetes-prediction-web",
@@ -29,7 +29,7 @@
   {
     "title": "Handwritten Digit Detection",
     "description": "High-performance handwritten digit detection system using deep learning techniques.",
-    "image": "../src/images/HandwrittenDigitDetection.png",
+    "image": "/images/HandwrittenDigitDetection.png",
     "tags": ["Python", "TensorFlow", "Keras", "OpenCV"],
     "category": "Machine Learning",
     "github": "https://github.com/KandimallaVarun/Handwritten-Digit-Detection",
