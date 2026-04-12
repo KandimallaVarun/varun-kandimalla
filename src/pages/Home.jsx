@@ -71,7 +71,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/10 rounded-3xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform"></div>
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMpu4MNOVHP02jBhLwKlL8896C1RoeufJnIG6sAbYiG3-xSygH-iEtwC-uReyRl1nRmAQp-O2KboeI7lC9WjpvsCncB7qdr_Ba-z07phzlQe8JZ7gKJytsdAfzqU5OMbV_zM1v7baqlClGncJjOkhz4Igq7VEs-HmEYuw523w6FwNKKROeE3fEz-PouKxmQVHuOgcyMb5CIAseIb7LFxrnJIk0w60DJ4u_XyCIsd9fITEt3cLcBkneTaTm0J5coSf94WnDD4EWT3FT"
+                src="/images/Profile.jpeg"
                 alt="Alex Chen Portrait"
                 className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl border-4 border-white shadow-xl"
                 referrerPolicy="no-referrer"
