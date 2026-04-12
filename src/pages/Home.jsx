@@ -1,10 +1,12 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, LineChart } from "lucide-react";
 import About from "./About";
 import ProjectSection from "../components/ProjectSection";
 import ExperienceSection from "../components/ExperienceSection";
 import CertificationsSection from "../components/CertificationsSection";
+import Projects from "./Projects";
 import Contact from "./Contact";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -39,8 +41,8 @@ export default function Home() {
               engineer.{" "}
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="px-8 py-4 bg-primary text-on-primary rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2 group"
               >
                 View Projects
@@ -48,12 +50,14 @@ export default function Home() {
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </a>
+              </Link>
               <a
-                href="#contact"
+                href="https://drive.google.com/file/d/1kI8g2NzHHmZydIYEYlccCYGj6tt6xKK9/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-surface-container-high text-on-surface rounded-lg font-semibold hover:bg-surface-container-highest transition-all"
               >
-                Hire Me
+                Resume
               </a>
             </div>
           </motion.div>

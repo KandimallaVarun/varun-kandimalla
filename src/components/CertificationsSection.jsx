@@ -72,7 +72,7 @@ export default function CertificationsSection() {
                 <p className="text-sm text-on-surface-variant">{cert.issuer}</p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5">
+              {/* <div className="flex flex-wrap gap-1.5">
                 {cert.skills.slice(0, 4).map((skill) => (
                   <span
                     key={skill}
@@ -81,7 +81,7 @@ export default function CertificationsSection() {
                     {skill}
                   </span>
                 ))}
-              </div>
+              </div> */}
 
               <div className="flex items-center justify-between pt-4 border-t border-outline-variant/10">
                 <div className="flex items-center gap-2 text-on-surface-variant">
