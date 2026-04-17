@@ -1,23 +1,22 @@
 import { motion } from "motion/react";
-import { Award, ExternalLink, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Award, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { CERTIFICATIONS, CATEGORY_COLORS } from "../pages/Certifications";
+import { CERTIFICATIONS } from "../pages/Certifications";
 
 // Show only the first 3 on the home page
 const FEATURED = CERTIFICATIONS.slice(0, 3);
 
 export default function CertificationsSection() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-24 md:py-32 bg-surface-container-low border-y border-outline-variant/10">
       <div className="max-w-7xl mx-auto px-8">
         {/* Header */}
-        <div className="grid md:grid-cols-12 gap-12 mb-16">
+        <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-4"
           >
             <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">
               Credentials
@@ -26,78 +25,53 @@ export default function CertificationsSection() {
               Certifications
             </h2>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-8 flex items-center"
-          >
-            <p className="text-lg text-on-surface-variant leading-relaxed">
-              Industry-recognized credentials across cloud infrastructure,
-              backend development, frontend engineering, and machine learning.
-            </p>
-          </motion.div>
         </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {FEATURED.map((cert, index) => (
-            <motion.div
+            <motion.a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={cert.credentialId}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-surface-container-low rounded-2xl p-7 flex flex-col gap-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group border border-outline-variant/10"
+              className="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-center text-center gap-4 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300 group border border-outline-variant/10 cursor-pointer"
             >
-              <div className="flex items-start justify-between">
-                <div className="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center">
-                  <Award className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                </div>
+              <div className="w-20 h-20 rounded-2xl bg-surface-container-high border border-outline-variant/10 flex items-center justify-center overflow-hidden">
+                {cert.badge ? (
+                  <img
+                    src={cert.badge}
+                    alt={`${cert.title} badge`}
+                    className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextSibling.style.display = "flex";
+                    }}
+                  />
+                ) : null}
                 <span
-                  className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
-                    CATEGORY_COLORS[cert.category] ?? "bg-gray-100 text-gray-600"
-                  }`}
+                  className="w-full h-full items-center justify-center"
+                  style={{ display: cert.badge ? "none" : "flex" }}
                 >
-                  {cert.category}
+                  <Award className="w-8 h-8 text-primary" />
                 </span>
               </div>
 
-              <div className="flex-grow">
-                <h3 className="text-base font-bold text-on-surface leading-snug mb-1">
+              <div>
+                <h3 className="text-sm font-bold text-on-surface leading-snug mb-1 group-hover:text-primary transition-colors">
                   {cert.title}
                 </h3>
-                <p className="text-sm text-on-surface-variant">{cert.issuer}</p>
+                <p className="text-xs text-on-surface-variant">{cert.issuer}</p>
               </div>
 
-              {/* <div className="flex flex-wrap gap-1.5">
-                {cert.skills.slice(0, 4).map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-[10px] font-semibold uppercase tracking-wider text-on-surface-variant border border-outline-variant/15 px-2 py-0.5 rounded"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div> */}
-
-              <div className="flex items-center justify-between pt-4 border-t border-outline-variant/10">
-                <div className="flex items-center gap-2 text-on-surface-variant">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span className="text-xs font-bold uppercase tracking-widest">{cert.date}</span>
-                </div>
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
-                >
-                  Verify <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </motion.div>
+              <span className="text-[10px] font-semibold text-on-surface-variant/60 uppercase tracking-widest">
+                {cert.date}
+              </span>
+            </motion.a>
           ))}
         </div>
 

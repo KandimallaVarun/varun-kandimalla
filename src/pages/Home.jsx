@@ -69,11 +69,11 @@ export default function Home() {
             className="flex-1 flex justify-center md:justify-end"
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-primary/10 rounded-3xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform"></div>
+              <div className="absolute inset-0 bg-primary/20 rounded-3xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform glow-primary"></div>
               <img
                 src="/images/Profile.jpeg"
                 alt="Alex Chen Portrait"
-                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl border-4 border-white shadow-xl"
+                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl border-4 border-surface-container-high shadow-xl shadow-primary/10"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -95,9 +95,9 @@ export default function Home() {
         <CertificationsSection />
       </div>
 
-      <div id="about">
+      {/* <div id="about">
         <About />
-      </div>
+      </div> */}
 
       <div id="contact">
         <Contact />

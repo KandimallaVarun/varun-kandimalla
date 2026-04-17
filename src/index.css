@@ -4,30 +4,89 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-headline: "Inter", ui-sans-serif, system-ui, sans-serif;
   
-  --color-surface: #f8f9fa;
-  --color-surface-container-low: #f1f4f6;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-high: #e3e9ec;
-  --color-surface-container-highest: #dbe4e7;
+  /* Dark theme - deep charcoal with cyan/teal accent */
+  --color-surface: #0f1117;
+  --color-surface-container-low: #161822;
+  --color-surface-container-lowest: #1c1f2e;
+  --color-surface-container-high: #232636;
+  --color-surface-container-highest: #2a2e40;
   
-  --color-primary: #4d6171;
-  --color-primary-dim: #425565;
-  --color-on-primary: #f3f8ff;
+  --color-primary: #38bdf8;
+  --color-primary-dim: #0ea5e9;
+  --color-on-primary: #0c1222;
   
-  --color-on-surface: #2b3437;
-  --color-on-surface-variant: #586064;
+  --color-on-surface: #e8edf5;
+  --color-on-surface-variant: #94a3b8;
   
-  --color-outline-variant: #abb3b7;
+  --color-outline-variant: #3b4058;
+
+  --color-accent: #a78bfa;
+  --color-accent-dim: #8b5cf6;
+  --color-glow: rgba(56, 189, 248, 0.15);
+  --color-glow-accent: rgba(167, 139, 250, 0.12);
 }
 
 @layer base {
   body {
     @apply bg-surface text-on-surface font-sans antialiased;
   }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-on-surface-variant);
+  }
 }
 
 .editorial-spacing {
   letter-spacing: -0.02em;
+}
+
+/* Glow effects for dark theme */
+.glow-primary {
+  box-shadow: 0 0 40px var(--color-glow), 0 0 80px var(--color-glow);
+}
+
+.glow-accent {
+  box-shadow: 0 0 40px var(--color-glow-accent), 0 0 80px var(--color-glow-accent);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle noise texture overlay */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(22, 24, 34, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 64, 88, 0.4);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');

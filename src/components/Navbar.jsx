@@ -35,10 +35,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 transition-all duration-300">
+    <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold tracking-tighter text-slate-900">
-          The Portfolio
+        <Link to="/" className="text-xl font-bold tracking-tighter text-on-surface">
+          <span className="text-gradient">The Portfolio</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -51,8 +51,8 @@ export default function Navbar() {
               className={({ isActive }) =>
                 cn(
                   "text-sm font-medium transition-colors relative py-1",
-                  isActive 
-                    ? "text-primary after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" 
+                  isActive
+                    ? "text-primary after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full"
                     : "text-on-surface-variant hover:text-on-surface"
                 )
               }
@@ -63,7 +63,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <button 
+          <button
             onClick={(e) => handleNavClick(e, '/contact', 'contact')}
             className="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-medium hover:bg-primary-dim transition-all shadow-sm"
           >
@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden p-2 text-on-surface"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -87,7 +87,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+            className="md:hidden bg-surface-container-low border-b border-outline-variant/20 overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
@@ -105,7 +105,7 @@ export default function Navbar() {
                   {link.name}
                 </NavLink>
               ))}
-              <button 
+              <button
                 onClick={(e) => handleNavClick(e, '/contact', 'contact')}
                 className="bg-primary text-on-primary px-5 py-3 rounded-lg font-medium text-center"
               >

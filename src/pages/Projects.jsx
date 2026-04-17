@@ -23,43 +23,35 @@ export default function Projects() {
   }, [activeFilter]);
 
   return (
-    <div className="min-h-screen bg-white pt-10 pb-20">
+    <div className="min-h-screen bg-surface pt-10 pb-20">
       {/* Header */}
-      <section className="container mx-auto px-6 mb-5">
-        {/* <Link 
-          to="/" 
-          className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-black transition-colors mb-8 group"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
-          Back to Home
-        </Link> */}
+      {/* <section className="container mx-auto px-6 mb-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-4xl font-bold tracking-tight text-on-surface mb-6">
             All Projects
           </h1>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Filter Bar */}
-      <section className="container mx-auto px-6 mb-12">
-        <div className="flex flex-wrap items-center gap-4 border-b border-gray-100 pb-6">
-          <div className="flex items-center text-gray-400 mr-2">
-            <Filter className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium uppercase tracking-wider">Filter:</span>
+      <section className="max-w-5xl mx-auto px-8 mb-8">
+        <div className="flex flex-wrap items-center gap-2.5 border-b border-outline-variant/20 pb-4">
+          <div className="flex items-center text-on-surface-variant mr-1">
+            <Filter className="w-3.5 h-3.5 mr-1.5" />
+            <span className="text-xs font-medium uppercase tracking-wider">Filter:</span>
           </div>
           {CATEGORIES.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeFilter === category
-                  ? "bg-black text-white shadow-lg shadow-black/10"
-                  : "bg-gray-50 text-gray-600 hover:bg-gray-100"
-              }`}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${activeFilter === category
+                ? "bg-primary text-on-primary shadow-md shadow-primary/20"
+                : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
+                }`}
             >
               {category}
             </button>
@@ -68,10 +60,10 @@ export default function Projects() {
       </section>
 
       {/* Projects Grid */}
-      <section className="container mx-auto px-6">
-        <motion.div 
+      <section className="max-w-5xl mx-auto px-8">
+        <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -82,41 +74,41 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-black/5 transition-all duration-500 flex flex-col h-full"
+                className="group bg-surface-container-low border border-outline-variant/15 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full text-black hover:scale-110 transition-transform">
-                      <ExternalLink className="w-5 h-5" />
+                  <div className="absolute inset-0 bg-surface/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-3">
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="p-2 bg-primary rounded-full text-on-primary hover:scale-110 transition-transform shadow-lg shadow-primary/30">
+                      <ExternalLink className="w-4 h-4" />
                     </a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full text-black hover:scale-110 transition-transform">
-                      <Github className="w-5 h-5" />
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-surface-container-highest rounded-full text-on-surface hover:scale-110 transition-transform">
+                      <Github className="w-4 h-4" />
                     </a>
                   </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-black rounded-full shadow-sm">
+                  <div className="absolute top-2.5 left-2.5">
+                    <span className="px-2 py-0.5 bg-surface/80 backdrop-blur-sm text-[9px] font-bold uppercase tracking-widest text-primary rounded-full shadow-sm border border-outline-variant/20">
                       {project.category}
                     </span>
                   </div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-black transition-colors">
+                <div className="p-4 flex flex-col flex-grow">
+                  <h3 className="text-sm font-bold text-on-surface mb-1.5 group-hover:text-primary transition-colors leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-on-surface-variant text-xs leading-relaxed mb-3 flex-grow">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 border border-gray-100 px-2 py-1 rounded"
+                        className="text-[9px] font-semibold uppercase tracking-wider text-primary/80 border border-primary/20 bg-primary/5 px-1.5 py-0.5 rounded"
                       >
                         {tag}
                       </span>
@@ -130,17 +122,17 @@ export default function Projects() {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gray-400 italic">No projects found in this category.</p>
+            <p className="text-on-surface-variant italic">No projects found in this category.</p>
           </div>
         )}
       </section>
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 mt-32">
-        <div className="bg-black rounded-3xl p-12 md:p-10 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
-             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
+        <div className="bg-gradient-to-br from-surface-container-high to-surface-container-low rounded-3xl p-12 md:p-10 text-center relative overflow-hidden border border-outline-variant/20">
+          <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px]" />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,15 +140,15 @@ export default function Projects() {
             viewport={{ once: true }}
             className="relative z-10"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-8">
               Have a project in mind?
             </h2>
-            <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+            <p className="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">
               I'm always looking for new challenges and interesting projects to work on. Let's build something amazing together.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-100 transition-all hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-primary text-on-primary font-bold rounded-full hover:bg-primary-dim transition-all hover:scale-105 shadow-lg shadow-primary/20"
             >
               Start a Conversation
             </Link>

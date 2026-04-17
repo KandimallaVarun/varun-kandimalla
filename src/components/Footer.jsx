@@ -4,7 +4,7 @@ import { SiLeetcode, SiHackerrank } from 'react-icons/si';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-slate-200/50 bg-surface">
+    <footer className="w-full border-t border-outline-variant/20 bg-surface-container-low">
       <div className="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-on-surface-variant text-sm leading-relaxed">
           © 2025 Designed by Varun Kandimalla
