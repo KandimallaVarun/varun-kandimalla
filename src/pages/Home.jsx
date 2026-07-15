@@ -21,9 +21,9 @@ export default function Home() {
             className="flex-2 space-x-20 space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm block editorial-spacing">
+              {/* <span className="text-primary font-semibold tracking-wider uppercase text-sm block editorial-spacing">
                 Available for Hire
-              </span>
+              </span> */}
               <h1 className="text-5xl md:text-5xl font-extrabold text-on-surface editorial-spacing leading-[1.1]">
                 Hi, I'm
                 <span className="text-primary block text-5xl md:text-6xl">

@@ -73,9 +73,10 @@ export default function Experience() {
                     </p>
                     <ul className="space-y-4">
                       {[
-                        "Redesigned the primary user dashboard, resulting in a 24% increase in daily active users within the first quarter.",
-                        "Established a comprehensive UI library using Figma and Tailwind tokens, reducing development hand-off time by 40%.",
-                        "Mentored three junior designers through successful promotion cycles and professional development tracks."
+                        "Developed and maintained backend services using Java and Spring Boot.",
+                        "Optimized APIs for performance, reducing response time by 20%.",
+                        "Conducted thorough testing to ensure robust and efficient software solutions.",
+                        "Collaborated with cross-functional teams to deliver high-quality applications."
                       ].map((bullet, i) => (
                         <li key={i} className="flex gap-4 text-on-surface-variant leading-relaxed">
                           <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
