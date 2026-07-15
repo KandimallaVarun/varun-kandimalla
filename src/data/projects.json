@@ -3,7 +3,7 @@
     "title": "TreasureMart",
     "description": "E-commerce platform for shopping local artisan goods with integrated payment gateway and real-time inventory management.",
     "image": "/images/TreasureMart.png",
-    "tags": ["Java", "Servlets", "JSP", "MySQL", "React", "AWS"],
+    "tags": ["Java", "Spring Boot", "MySQL", "React", "AWS"],
     "category": "Full Stack",
     "github": "https://github.com/KandimallaVarun/TreasureMart-EcommerceApplication",
     "demo": "https://treasuremart-ecommerceapplication.onrender.com/EcommerceWebsite/view/home/index.jsp"
