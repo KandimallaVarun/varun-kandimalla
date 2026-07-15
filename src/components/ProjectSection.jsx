@@ -49,12 +49,14 @@ export default function ProjectSection() {
             <div className="flex gap-4">
               <a
                 href={project.github}
+                target="_blank"
                 className="flex-1 py-2 text-sm font-semibold border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2"
               >
                 <Code size={16} /> GitHub
               </a>
               <a
                 href={project.demo}
+                target="_blank"
                 className="flex-1 py-2 text-sm font-semibold bg-primary text-on-primary rounded-lg hover:bg-primary-dim transition-colors flex items-center justify-center gap-2"
               >
                 <Eye size={16} /> Live Demo
